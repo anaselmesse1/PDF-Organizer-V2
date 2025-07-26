@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organize PDF | MessPDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="back-btn">
+                <i class='bx bx-arrow-back'></i>
+                Back
+            </a>
+            <a href="index.html" class="logo">
+                <i class='bx bxs-file-pdf'></i>
+                MessPDF
+            </a>
+        </div>
+        <div class="header-actions">
+            <input type="file" id="pdf-upload" class="file-input" accept=".pdf">
+        </div>
+    </header>
+    
+    <!-- Mobile-friendly action bar -->
+    <div class="action-bar">
+        <button id="upload-btn" class="btn btn-primary">
+            <i class='bx bx-cloud-upload'></i>
+            <span class="btn-text">Upload PDF</span>
+        </button>
+        <button id="download-btn" class="btn btn-primary" disabled>
+            <i class='bx bx-download'></i>
+            <span class="btn-text">Download</span>
+        </button>
+        <button id="undo-btn" class="btn btn-outline" disabled>
+            <i class='bx bx-undo'></i>
+            <span class="btn-text">Undo</span>
+        </button>
+        <button id="redo-btn" class="btn btn-outline" disabled>
+            <i class='bx bx-redo'></i>
+            <span class="btn-text">Redo</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="message" id="message-box"></div>
+        <div class="main-content">
+            <div class="thumbnail-container" id="thumbnail-container">
+                <!-- Thumbnail guide message for mobile -->
+                <div class="thumbnail-guide">
+                    <i class='bx bx-swipe-left'></i>
+                    <span>Swipe to navigate pages</span>
+                </div>
+                <!-- Thumbnails will be generated here -->
+                <!-- Add page button will be added dynamically -->
+            </div>
+            <div class="viewer-container" id="viewer-container">
+                <!-- Empty state -->
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-state-icon">
+                        <i class='bx bxs-file-pdf'></i>
+                    </div>
+                    <div class="empty-state-title">PDF Editor</div>
+                    <div class="empty-state-subtitle">Upload a PDF file to start editing</div>
+                    <button onclick="document.getElementById('pdf-upload').click()" class="btn btn-primary">
+                        <i class='bx bx-cloud-upload'></i>
+                        Choose PDF File
+                    </button>
+                </div>
+                <!-- PDF page will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the required libraries -->
+ <script src="js.js"></script>    
+    <!-- Load PDF.js with enhanced error handling -->
+   
+</body>
+</html>
